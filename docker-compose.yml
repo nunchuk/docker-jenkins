@@ -1,5 +1,5 @@
 jenkins:
-    image: 'registry.aliyuncs.com/acs-sample/jenkins:latest'
+    image: 'registry.cn-hangzhou.aliyuncs.com/zhijin/jenkins:plugins'
     ports:
         - '38080:8080'
         - '50000:50000'
