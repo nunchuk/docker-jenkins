@@ -1,0 +1,21 @@
+jenkins:
+    image: 'registry.aliyuncs.com/acs-sample/jenkins:latest'
+    ports:
+        - '38080:8080'
+        - '50000:50000'
+    volumes:
+        - /srv/docker/jenkins:/var/jenkins_home \
+    privileged: true
+    links:
+        - slave-java
+        - slave-php
+
+slave-java:
+    image: 'registry.aliyuncs.com/acs-sample/jenkins-slave-dind-java'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+
+slave-php:
+    image: 'registry.aliyuncs.com/acs-sample/jenkins-slave-dind-php'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock   
