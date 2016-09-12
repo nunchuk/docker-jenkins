@@ -5,6 +5,10 @@ jenkins with nodejs slave
 ### Usage
 Use it with docker-compose    
 
+### Build
+
+    docker build -t registry.cn-hangzhou.aliyuncs.com/zhijin/jenkins:plugins .
+
 ```
 jenkins:
     image: 'registry.aliyuncs.com/acs-sample/jenkins:latest'
